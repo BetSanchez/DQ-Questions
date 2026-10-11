@@ -11,7 +11,7 @@ funciona directamente en GitHub Pages.
 - **Repasar falladas**: solo incluye las preguntas que has fallado. Si aciertas una, sale de la lista.
 - Cambia el orden de las preguntas y de las opciones en cada sesión.
 - Guarda las preguntas falladas y el mejor puntaje en `localStorage`. Puedes borrarlos con «Reiniciar progreso guardado».
-- Se adapta a celular y laptop, tiene modo oscuro automático y se puede usar con teclado:
+- Se adapta a celular y laptop, tiene un botón para cambiar entre el modo claro (paleta pastel) y el modo oscuro (diseño original en azul), recuerda tu elección y se puede usar con teclado:
   - `1`–`6`: elegir una opción.
   - `Espacio`: marcar la opción que tiene el foco.
   - `Enter`: comprobar o avanzar.

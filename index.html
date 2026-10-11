@@ -3,17 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
+  <meta name="color-scheme" content="light">
   <meta name="description" content="Practica preguntas de la certificación Cisco CCST Ciberseguridad.">
   <title>CCST Ciberseguridad · Estudio</title>
+  <!-- Aplica el tema guardado antes de pintar la página (evita un parpadeo) -->
+  <script>
+    try {
+      if (JSON.parse(localStorage.getItem('ccst-ciber.tema')) === 'oscuro') {
+        document.documentElement.dataset.tema = 'oscuro';
+      }
+    } catch (error) { /* Sin localStorage: se usa el tema claro */ }
+  </script>
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/app.js" defer></script>
 </head>
 <body>
   <header class="cabecera">
-    <div class="contenedor">
-      <h1 class="cabecera-titulo">CCST Ciberseguridad</h1>
-      <p class="cabecera-subtitulo">Banco de preguntas para estudiar</p>
+    <div class="contenedor cabecera-contenido">
+      <div>
+        <h1 class="cabecera-titulo">CCST Ciberseguridad</h1>
+        <p class="cabecera-subtitulo">Banco de preguntas para estudiar</p>
+      </div>
+      <button type="button" id="btn-tema" class="boton-tema" aria-pressed="false">
+        <span class="boton-tema-icono" aria-hidden="true">☾</span>
+        <span class="boton-tema-texto">Modo oscuro</span>
+      </button>
     </div>
   </header>
 

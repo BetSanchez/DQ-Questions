@@ -1,59 +1,99 @@
 /* =========================================================
    CCST Ciberseguridad – Estilos
-   Mobile-first. Colores en variables CSS con modo oscuro automático.
+   Mobile-first. Colores pastel en variables CSS; siempre en modo claro.
    ========================================================= */
 
-/* ---------- Variables (modo claro) ---------- */
+/* ---------- Variables (modo claro) ----------
+   Paleta pastel base (colors/palett.jpg):
+   turquesa #83D9DC · aguamarina #B0EFEF · malva #C997C6
+   rosa #F498C2 · rubor #FCDCDF · crema #FEFFBF
+   Los pastel se usan en fondos, bordes y botones. Los textos usan
+   tonos oscurecidos de la misma paleta para mantener buen contraste. */
 :root {
-  --color-fondo: #f4f6fb;
+  --pastel-turquesa: #83d9dc;
+  --pastel-aguamarina: #b0efef;
+  --pastel-malva: #c997c6;
+  --pastel-rosa: #f498c2;
+  --pastel-rubor: #fcdcdf;
+  --pastel-crema: #feffbf;
+
+  --color-fondo: #fffdf5;
   --color-superficie: #ffffff;
-  --color-superficie-2: #eaeef6;
-  --color-texto: #111827;
-  --color-texto-suave: #4b5563;
-  --color-borde: #cfd6e2;
-  --color-acento: #1d4ed8;
-  --color-acento-hover: #1e40af;
-  --color-acento-suave: #e3ebff;
-  --color-sobre-acento: #ffffff;
-  --color-correcto: #15803d;
-  --color-correcto-fondo: #e6f5eb;
-  --color-incorrecto: #b91c1c;
-  --color-incorrecto-fondo: #fdeaea;
-  --color-foco: #1d4ed8;
+  --color-superficie-2: #f8f0f7;
+  --color-texto: #3b2f45;
+  --color-texto-suave: #6b5d77;
+  --color-borde: #ecdfeb;
+  --color-acento: #8a4f87;          /* malva oscurecido para texto */
+  --color-acento-hover: #6f3c6c;
+  --color-acento-suave: #f7edf6;
+  --color-boton: var(--pastel-malva);
+  --color-boton-hover: #bb84b8;
+  --color-sobre-boton: #2e1f33;
+  --color-sobre-pastel: #2e1f33;
+  --color-correcto: #1f6e70;        /* turquesa oscurecido */
+  --color-correcto-fondo: #e4f9f9;
+  --color-correcto-borde: #5fc4c8;
+  --color-incorrecto: #a3305f;      /* rosa oscurecido */
+  --color-incorrecto-fondo: #fdeaf1;
+  --color-incorrecto-borde: #ee82b4;
+  --color-foco: #8a4f87;
+
+  /* Tintes suaves para tarjetas y modos */
+  --tinte-turquesa: #e8fafa;
+  --tinte-crema: #fffee2;
+  --tinte-rosa: #fdeef1;
+
+  --fondo-cabecera: linear-gradient(120deg, var(--pastel-aguamarina), var(--pastel-rubor) 55%, var(--pastel-crema));
+  --fondo-progreso: linear-gradient(90deg, var(--pastel-turquesa), var(--pastel-malva), var(--pastel-rosa));
 
   --fuente: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --fuente-mono: ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace;
-  --radio: 0.75rem;
-  --radio-pequeno: 0.5rem;
-  --sombra: 0 0.0625rem 0.125rem rgb(15 23 42 / 6%), 0 0.25rem 0.75rem rgb(15 23 42 / 6%);
+  --radio: 1.125rem;
+  --radio-pequeno: 0.875rem;
+  --radio-pildora: 62.5rem;
+  --sombra: 0 0.125rem 0.375rem rgb(201 151 198 / 12%), 0 0.5rem 1.5rem rgb(201 151 198 / 14%);
   --alto-tactil: 2.75rem; /* 44px */
   --espacio: 1rem;
 
   color-scheme: light;
 }
 
-/* ---------- Modo oscuro automático ---------- */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-fondo: #0d1320;
-    --color-superficie: #161f30;
-    --color-superficie-2: #1f2a3f;
-    --color-texto: #e6e9ef;
-    --color-texto-suave: #a5afc0;
-    --color-borde: #34415a;
-    --color-acento: #60a5fa;
-    --color-acento-hover: #93c5fd;
-    --color-acento-suave: #1b3358;
-    --color-sobre-acento: #0b1220;
-    --color-correcto: #4ade80;
-    --color-correcto-fondo: #10301d;
-    --color-incorrecto: #f87171;
-    --color-incorrecto-fondo: #3a1618;
-    --color-foco: #93c5fd;
-    --sombra: none;
+/* ---------- Tema oscuro: diseño original (acento azul) ----------
+   Se activa con el botón de la cabecera (atributo data-tema="oscuro" en <html>).
+   Los ajustes de componentes están al final del archivo. */
+:root[data-tema="oscuro"] {
+  --color-fondo: #0d1320;
+  --color-superficie: #161f30;
+  --color-superficie-2: #1f2a3f;
+  --color-texto: #e6e9ef;
+  --color-texto-suave: #a5afc0;
+  --color-borde: #34415a;
+  --color-acento: #60a5fa;
+  --color-acento-hover: #93c5fd;
+  --color-acento-suave: #1b3358;
+  --color-boton: #60a5fa;
+  --color-boton-hover: #93c5fd;
+  --color-sobre-boton: #0b1220;
+  --color-sobre-pastel: #0b1220;
+  --color-correcto: #4ade80;
+  --color-correcto-fondo: #10301d;
+  --color-correcto-borde: #4ade80;
+  --color-incorrecto: #f87171;
+  --color-incorrecto-fondo: #3a1618;
+  --color-incorrecto-borde: #f87171;
+  --color-foco: #93c5fd;
 
-    color-scheme: dark;
-  }
+  --tinte-turquesa: var(--color-superficie);
+  --tinte-crema: var(--color-superficie);
+  --tinte-rosa: var(--color-superficie);
+  --fondo-cabecera: var(--color-superficie);
+  --fondo-progreso: var(--color-acento);
+
+  --radio: 0.75rem;
+  --radio-pequeno: 0.5rem;
+  --sombra: none;
+
+  color-scheme: dark;
 }
 
 /* ---------- Base ---------- */
@@ -74,7 +114,12 @@ body {
   font-size: 1rem;
   line-height: 1.55;
   color: var(--color-texto);
-  background: var(--color-fondo);
+  background:
+    radial-gradient(circle at 0% 0%, var(--tinte-turquesa) 0, transparent 35rem),
+    radial-gradient(circle at 100% 100%, var(--tinte-rosa) 0, transparent 35rem),
+    var(--color-fondo);
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 [hidden] {
@@ -148,9 +193,59 @@ kbd {
 }
 
 .cabecera {
+  background: var(--fondo-cabecera);
+  padding-block: 1rem;
+  border-radius: 0 0 var(--radio) var(--radio);
+  box-shadow: var(--sombra);
+}
+
+.cabecera-contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+/* Botón para cambiar entre tema claro (pastel) y oscuro (original) */
+.boton-tema {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: var(--alto-tactil);
+  min-width: var(--alto-tactil);
+  padding: 0.5rem 0.875rem;
+  border: 0.125rem solid var(--color-borde);
+  border-radius: var(--radio-pildora);
   background: var(--color-superficie);
-  border-bottom: 0.0625rem solid var(--color-borde);
-  padding-block: 0.875rem;
+  color: var(--color-acento);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.boton-tema:hover {
+  border-color: var(--color-acento);
+  background: var(--color-acento-suave);
+}
+
+.boton-tema-icono {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+/* En pantallas muy estrechas solo se ve el icono */
+@media (max-width: 22.5em) {
+  .boton-tema-texto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
 }
 
 .cabecera-titulo {
@@ -194,7 +289,7 @@ kbd {
   min-height: var(--alto-tactil);
   padding: 0.625rem 1.125rem;
   border: 0.125rem solid transparent;
-  border-radius: var(--radio-pequeno);
+  border-radius: var(--radio-pildora);
   font: inherit;
   font-weight: 600;
   cursor: pointer;
@@ -207,12 +302,13 @@ kbd {
 }
 
 .boton-primario {
-  background: var(--color-acento);
-  color: var(--color-sobre-acento);
+  background: var(--color-boton);
+  color: var(--color-sobre-boton);
+  box-shadow: 0 0.25rem 0.75rem rgb(201 151 198 / 30%);
 }
 
 .boton-primario:hover:not(:disabled) {
-  background: var(--color-acento-hover);
+  background: var(--color-boton-hover);
 }
 
 .boton-secundario {
@@ -222,7 +318,8 @@ kbd {
 }
 
 .boton-secundario:hover:not(:disabled) {
-  border-color: var(--color-acento);
+  border-color: var(--pastel-malva);
+  background: var(--color-acento-suave);
   color: var(--color-acento);
 }
 
@@ -253,11 +350,22 @@ kbd {
 }
 
 .estadistica {
-  background: var(--color-superficie);
+  background: var(--tinte-turquesa);
   border: 0.0625rem solid var(--color-borde);
+  border-top: 0.25rem solid var(--pastel-turquesa);
   border-radius: var(--radio);
   padding: 0.75rem 0.5rem;
   text-align: center;
+}
+
+.estadistica:nth-child(2) {
+  background: var(--tinte-crema);
+  border-top-color: var(--pastel-malva);
+}
+
+.estadistica:nth-child(3) {
+  background: var(--tinte-rosa);
+  border-top-color: var(--pastel-rosa);
 }
 
 .estadistica dt {
@@ -283,6 +391,7 @@ kbd {
   min-height: var(--alto-tactil);
   padding: 1rem 1.125rem;
   border: 0.125rem solid var(--color-borde);
+  border-left: 0.4rem solid var(--pastel-turquesa);
   border-radius: var(--radio);
   background: var(--color-superficie);
   color: var(--color-texto);
@@ -293,9 +402,22 @@ kbd {
   transition: border-color 0.15s, background-color 0.15s;
 }
 
+.boton-modo[data-modo="examen"] { border-left-color: var(--pastel-malva); }
+.boton-modo[data-modo="repaso"] { border-left-color: var(--pastel-rosa); }
+
 .boton-modo:hover:not(:disabled) {
-  border-color: var(--color-acento);
+  border-color: var(--pastel-malva);
   background: var(--color-acento-suave);
+}
+
+.boton-modo[data-modo="practica"]:hover:not(:disabled) {
+  border-color: var(--pastel-turquesa);
+  background: var(--tinte-turquesa);
+}
+
+.boton-modo[data-modo="repaso"]:hover:not(:disabled) {
+  border-color: var(--pastel-rosa);
+  background: var(--tinte-rosa);
 }
 
 .boton-modo:disabled {
@@ -321,7 +443,7 @@ kbd {
 .insignia {
   display: inline-block;
   padding: 0.1rem 0.6rem;
-  border-radius: 62.5rem;
+  border-radius: var(--radio-pildora);
   background: var(--color-acento-suave);
   color: var(--color-acento);
   font-size: 0.8rem;
@@ -364,8 +486,8 @@ kbd {
 }
 
 .barra-progreso {
-  height: 0.5rem;
-  border-radius: 62.5rem;
+  height: 0.625rem;
+  border-radius: var(--radio-pildora);
   background: var(--color-superficie-2);
   overflow: hidden;
 }
@@ -374,7 +496,7 @@ kbd {
   width: 0%;
   height: 100%;
   border-radius: inherit;
-  background: var(--color-acento);
+  background: var(--fondo-progreso);
   transition: width 0.25s ease;
 }
 
@@ -419,7 +541,8 @@ kbd {
 }
 
 .opcion:hover:not(:disabled) {
-  border-color: var(--color-acento);
+  border-color: var(--pastel-malva);
+  background: var(--color-acento-suave);
 }
 
 .opcion:disabled {
@@ -432,8 +555,9 @@ kbd {
   place-items: center;
   width: 1.75rem;
   height: 1.75rem;
-  border: 0.125rem solid var(--color-borde);
+  border: 0.125rem solid var(--pastel-malva);
   border-radius: 50%;
+  color: var(--color-acento);
   font-size: 0.85rem;
   font-weight: 700;
 }
@@ -460,20 +584,20 @@ kbd {
 }
 
 .opcion.seleccionada .opcion-tecla {
-  border-color: var(--color-acento);
-  background: var(--color-acento);
-  color: var(--color-sobre-acento);
+  border-color: var(--pastel-malva);
+  background: var(--pastel-malva);
+  color: var(--color-sobre-pastel);
 }
 
 .opcion.correcta {
-  border-color: var(--color-correcto);
+  border-color: var(--color-correcto-borde);
   background: var(--color-correcto-fondo);
 }
 
 .opcion.correcta .opcion-tecla {
-  border-color: var(--color-correcto);
-  background: var(--color-correcto);
-  color: var(--color-sobre-acento);
+  border-color: var(--pastel-turquesa);
+  background: var(--pastel-turquesa);
+  color: var(--color-sobre-pastel);
 }
 
 .opcion.correcta .opcion-marca {
@@ -481,14 +605,14 @@ kbd {
 }
 
 .opcion.incorrecta {
-  border-color: var(--color-incorrecto);
+  border-color: var(--color-incorrecto-borde);
   background: var(--color-incorrecto-fondo);
 }
 
 .opcion.incorrecta .opcion-tecla {
-  border-color: var(--color-incorrecto);
-  background: var(--color-incorrecto);
-  color: var(--color-sobre-acento);
+  border-color: var(--pastel-rosa);
+  background: var(--pastel-rosa);
+  color: var(--color-sobre-pastel);
 }
 
 .opcion.incorrecta .opcion-marca {
@@ -510,12 +634,12 @@ kbd {
 }
 
 .fila-relacion.correcta {
-  border-color: var(--color-correcto);
+  border-color: var(--color-correcto-borde);
   background: var(--color-correcto-fondo);
 }
 
 .fila-relacion.incorrecta {
-  border-color: var(--color-incorrecto);
+  border-color: var(--color-incorrecto-borde);
   background: var(--color-incorrecto-fondo);
 }
 
@@ -559,8 +683,8 @@ kbd {
   background: var(--color-superficie-2);
 }
 
-.retroalimentacion.es-correcta { border-left-color: var(--color-correcto); }
-.retroalimentacion.es-incorrecta { border-left-color: var(--color-incorrecto); }
+.retroalimentacion.es-correcta { border-left-color: var(--color-correcto-borde); background: var(--color-correcto-fondo); }
+.retroalimentacion.es-incorrecta { border-left-color: var(--color-incorrecto-borde); background: var(--color-incorrecto-fondo); }
 
 .retro-titulo {
   font-weight: 700;
@@ -662,8 +786,8 @@ kbd {
   background: var(--color-superficie);
 }
 
-.revision-item.correcta { border-left-color: var(--color-correcto); }
-.revision-item.incorrecta { border-left-color: var(--color-incorrecto); }
+.revision-item.correcta { border-left-color: var(--color-correcto-borde); }
+.revision-item.incorrecta { border-left-color: var(--color-incorrecto-borde); }
 
 .revision-encabezado {
   display: flex;
@@ -712,7 +836,7 @@ kbd {
 
 /* ---------- Error ---------- */
 .aviso-error {
-  border-left: 0.3rem solid var(--color-incorrecto);
+  border-left: 0.3rem solid var(--color-incorrecto-borde);
 }
 
 .aviso-error h2 {
@@ -787,6 +911,73 @@ kbd {
   .acciones-resultado {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+/* ---------- Tema oscuro: ajustes de componentes ----------
+   Devuelven a cada componente el aspecto del diseño original. */
+[data-tema="oscuro"] body {
+  background: var(--color-fondo);
+}
+
+[data-tema="oscuro"] .cabecera {
+  border-radius: 0;
+  border-bottom: 0.0625rem solid var(--color-borde);
+  box-shadow: none;
+}
+
+[data-tema="oscuro"] .boton {
+  border-radius: var(--radio-pequeno);
+}
+
+[data-tema="oscuro"] .boton-primario {
+  box-shadow: none;
+}
+
+[data-tema="oscuro"] .boton-secundario:hover:not(:disabled) {
+  border-color: var(--color-acento);
+  background: var(--color-superficie);
+}
+
+[data-tema="oscuro"] .estadistica:nth-child(n) {
+  border-top: 0.0625rem solid var(--color-borde);
+}
+
+[data-tema="oscuro"] .boton-modo[data-modo] {
+  border-left: 0.125rem solid var(--color-borde);
+}
+
+[data-tema="oscuro"] .boton-modo[data-modo]:hover:not(:disabled) {
+  border-color: var(--color-acento);
+  background: var(--color-acento-suave);
+}
+
+[data-tema="oscuro"] .opcion:hover:not(:disabled) {
+  border-color: var(--color-acento);
+  background: var(--color-superficie);
+}
+
+[data-tema="oscuro"] .opcion-tecla {
+  border-color: var(--color-borde);
+  color: inherit;
+}
+
+[data-tema="oscuro"] .opcion.seleccionada .opcion-tecla {
+  border-color: var(--color-acento);
+  background: var(--color-acento);
+}
+
+[data-tema="oscuro"] .opcion.correcta .opcion-tecla {
+  border-color: var(--color-correcto);
+  background: var(--color-correcto);
+}
+
+[data-tema="oscuro"] .opcion.incorrecta .opcion-tecla {
+  border-color: var(--color-incorrecto);
+  background: var(--color-incorrecto);
+}
+
+[data-tema="oscuro"] .retroalimentacion[class*="es-"] {
+  background: var(--color-superficie-2);
 }
 
 /* ---------- Movimiento reducido ---------- */

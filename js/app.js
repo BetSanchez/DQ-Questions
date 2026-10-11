@@ -13,6 +13,7 @@ const RUTA_PREGUNTAS = 'data/preguntas.json';
 const CLAVES = {
   falladas: 'ccst-ciber.falladas',
   mejorPuntaje: 'ccst-ciber.mejorPuntaje',
+  tema: 'ccst-ciber.tema', // también se lee en el <head> de index.html
 };
 
 // Modos de estudio: "conRetro" indica si se corrige cada pregunta al momento
@@ -729,10 +730,45 @@ function manejarTeclado(evento) {
 }
 
 /* ---------------------------------------------------------
+   Tema claro (pastel) / oscuro (diseño original)
+   --------------------------------------------------------- */
+
+function temaActual() {
+  return document.documentElement.dataset.tema === 'oscuro' ? 'oscuro' : 'claro';
+}
+
+/** Aplica el tema en <html> y actualiza el botón. */
+function aplicarTema(tema) {
+  if (tema === 'oscuro') document.documentElement.dataset.tema = 'oscuro';
+  else delete document.documentElement.dataset.tema;
+  actualizarBotonTema();
+}
+
+/** El botón muestra el modo al que se cambiará al pulsarlo. */
+function actualizarBotonTema() {
+  const oscuro = temaActual() === 'oscuro';
+  const boton = $('btn-tema');
+  boton.setAttribute('aria-pressed', String(oscuro));
+  boton.querySelector('.boton-tema-icono').textContent = oscuro ? '☀' : '☾';
+  boton.querySelector('.boton-tema-texto').textContent = oscuro ? 'Modo claro' : 'Modo oscuro';
+  boton.title = oscuro ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro';
+}
+
+/** Cambia de tema y guarda la preferencia. */
+function alternarTema() {
+  const nuevo = temaActual() === 'oscuro' ? 'claro' : 'oscuro';
+  aplicarTema(nuevo);
+  escribirGuardado(CLAVES.tema, nuevo);
+  anunciar(nuevo === 'oscuro' ? 'Modo oscuro activado.' : 'Modo claro activado.');
+}
+
+/* ---------------------------------------------------------
    Inicialización
    --------------------------------------------------------- */
 
 function enlazarEventos() {
+  $('btn-tema').addEventListener('click', alternarTema);
+
   document.querySelectorAll('.boton-modo').forEach((boton) => {
     boton.addEventListener('click', () => iniciarSesion(boton.dataset.modo));
   });
@@ -755,6 +791,7 @@ function enlazarEventos() {
 }
 
 async function iniciarApp() {
+  aplicarTema(leerGuardado(CLAVES.tema, 'claro'));
   enlazarEventos();
   mostrarPantalla('pantalla-carga');
   try {
