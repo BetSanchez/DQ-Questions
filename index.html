@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Practica preguntas de la certificación Cisco CCST Ciberseguridad.">
+  <title>CCST Ciberseguridad · Estudio</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="cabecera">
+    <div class="contenedor">
+      <h1 class="cabecera-titulo">CCST Ciberseguridad</h1>
+      <p class="cabecera-subtitulo">Banco de preguntas para estudiar</p>
+    </div>
+  </header>
+
+  <main class="contenedor principal">
+    <!-- Región oculta para anunciar cambios a lectores de pantalla -->
+    <p id="anuncio" class="solo-lector" aria-live="polite"></p>
+
+    <!-- ===== Pantalla: cargando ===== -->
+    <section id="pantalla-carga" class="pantalla" aria-busy="true">
+      <p class="texto-centrado texto-suave">Cargando preguntas…</p>
+    </section>
+
+    <!-- ===== Pantalla: error de carga ===== -->
+    <section id="pantalla-error" class="pantalla" hidden>
+      <div class="tarjeta aviso-error" role="alert">
+        <h2>No se pudieron cargar las preguntas</h2>
+        <p>
+          La aplicación necesita leer <code>data/preguntas.json</code>. Los navegadores bloquean
+          esa lectura cuando abres <code>index.html</code> con doble clic (<code>file://</code>).
+        </p>
+        <p><strong>Ábrela con un servidor local:</strong></p>
+        <ul>
+          <li>En VS Code: clic derecho en <code>index.html</code> → <em>Open with Live Server</em>.</li>
+          <li>En una terminal, dentro de la carpeta del proyecto:
+            <code>python -m http.server 8000</code> y entra a
+            <code>http://localhost:8000</code>.</li>
+        </ul>
+        <p>Si ya usas un servidor, verifica que el archivo exista y que sea JSON válido.</p>
+        <p class="texto-suave texto-pequeno">Detalle técnico: <span id="detalle-error"></span></p>
+        <button type="button" id="btn-reintentar" class="boton boton-primario">Reintentar</button>
+      </div>
+    </section>
+
+    <!-- ===== Pantalla: inicio ===== -->
+    <section id="pantalla-inicio" class="pantalla" hidden aria-labelledby="titulo-inicio">
+      <h2 id="titulo-inicio" class="titulo-seccion">Elige cómo estudiar</h2>
+
+      <dl class="estadisticas">
+        <div class="estadistica">
+          <dt>Preguntas</dt>
+          <dd id="dato-total">0</dd>
+        </div>
+        <div class="estadistica">
+          <dt>Mejor puntaje</dt>
+          <dd id="dato-mejor">—</dd>
+        </div>
+        <div class="estadistica">
+          <dt>Falladas</dt>
+          <dd id="dato-falladas">0</dd>
+        </div>
+      </dl>
+      <p id="detalle-mejor" class="texto-suave texto-pequeno texto-centrado"></p>
+
+      <div class="modos">
+        <button type="button" class="boton-modo" data-modo="practica">
+          <span class="boton-modo-titulo">Modo Práctica</span>
+          <span class="boton-modo-texto">Comprueba cada respuesta y lee la explicación al momento.</span>
+        </button>
+        <button type="button" class="boton-modo" data-modo="examen">
+          <span class="boton-modo-titulo">Modo Examen</span>
+          <span class="boton-modo-texto">Sin ayudas. Verás tu puntaje y la revisión completa al final.</span>
+        </button>
+        <button type="button" class="boton-modo" data-modo="repaso" id="btn-repaso">
+          <span class="boton-modo-titulo">Repasar falladas <span id="cuenta-repaso" class="insignia"></span></span>
+          <span class="boton-modo-texto" id="texto-repaso">Practica solo las preguntas que has respondido mal.</span>
+        </button>
+      </div>
+
+      <div class="texto-centrado">
+        <button type="button" id="btn-reiniciar" class="boton boton-texto boton-peligro">
+          Reiniciar progreso guardado
+        </button>
+      </div>
+    </section>
+
+    <!-- ===== Pantalla: pregunta ===== -->
+    <section id="pantalla-pregunta" class="pantalla" hidden>
+      <div class="barra-sesion">
+        <span id="etiqueta-modo" class="etiqueta-modo"></span>
+        <button type="button" id="btn-salir" class="boton boton-texto">Salir al inicio</button>
+      </div>
+
+      <div class="progreso">
+        <div class="progreso-textos">
+          <span>Pregunta <strong id="contador">0/0</strong></span>
+          <span id="etiqueta-tipo" class="texto-suave"></span>
+        </div>
+        <div id="barra-progreso" class="barra-progreso" role="progressbar"
+             aria-label="Progreso de la sesión" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div id="barra-relleno" class="barra-relleno"></div>
+        </div>
+      </div>
+
+      <article class="tarjeta pregunta">
+        <h2 id="enunciado" class="enunciado" tabindex="-1"></h2>
+        <p id="instruccion" class="instruccion"></p>
+        <div id="zona-respuestas"></div>
+        <div id="retroalimentacion" class="retroalimentacion" aria-live="polite" hidden></div>
+      </article>
+
+      <div class="controles">
+        <button type="button" id="btn-anterior" class="boton boton-secundario">← Anterior</button>
+        <button type="button" id="btn-comprobar" class="boton boton-primario">Comprobar</button>
+        <button type="button" id="btn-siguiente" class="boton boton-secundario">Siguiente →</button>
+      </div>
+
+      <p class="ayuda-teclado texto-suave texto-pequeno">
+        Teclado: <kbd>1</kbd>–<kbd>6</kbd> elegir opción · <kbd>Enter</kbd> comprobar o avanzar
+      </p>
+    </section>
+
+    <!-- ===== Pantalla: resultados ===== -->
+    <section id="pantalla-resultados" class="pantalla" hidden aria-labelledby="titulo-resultados">
+      <div class="tarjeta resumen">
+        <h2 id="titulo-resultados" class="titulo-seccion" tabindex="-1">Resultados</h2>
+        <p class="puntaje"><span id="resultado-porcentaje">0%</span></p>
+        <p id="resultado-aciertos" class="resultado-aciertos"></p>
+        <p id="resultado-mensaje" class="texto-suave"></p>
+        <p id="resultado-record" class="insignia insignia-ok" hidden>¡Nuevo mejor puntaje!</p>
+        <div class="acciones-resultado">
+          <button type="button" id="btn-resultado-repaso" class="boton boton-secundario">Repasar falladas</button>
+          <button type="button" id="btn-resultado-inicio" class="boton boton-primario">Volver al inicio</button>
+        </div>
+      </div>
+
+      <div class="revision-cabecera-lista">
+        <h3>Revisión</h3>
+        <label class="interruptor">
+          <input type="checkbox" id="filtro-incorrectas">
+          Solo incorrectas
+        </label>
+      </div>
+      <ol id="lista-revision" class="revision"></ol>
+    </section>
+  </main>
+</body>
+</html>

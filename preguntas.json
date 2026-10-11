@@ -1,0 +1,903 @@
+[
+  {
+    "id": 1,
+    "tipo": "opcion",
+    "pregunta": "¿De qué forma los espacios aislados (sandbox) ayudan a analizar el malware?",
+    "opciones": [
+      "Especifican las aplicaciones autorizadas para usarse en la red.",
+      "Permiten que las aplicaciones sospechosas se ejecuten en un entorno seguro y aislado.",
+      "Definen las aplicaciones sospechosas o malintencionadas que deben bloquearse.",
+      "Impiden que el tráfico pase de una red a otra."
+    ],
+    "correctas": [
+      1
+    ],
+    "nota": ""
+  },
+  {
+    "id": 2,
+    "tipo": "relacionar",
+    "pregunta": "Relacione cada fase del ciclo de vida de respuesta a incidentes de NIST con su descripción.",
+    "pares": [
+      {
+        "izquierda": "Preparación",
+        "derecha": "Establece la capacidad de respuesta para garantizar que los activos estén suficientemente protegidos."
+      },
+      {
+        "izquierda": "Detección y análisis",
+        "derecha": "Evalúa los indicadores del incidente para determinar si son ataques legítimos y avisa a la organización."
+      },
+      {
+        "izquierda": "Contención, erradicación y recuperación",
+        "derecha": "Mitiga el impacto del incidente."
+      },
+      {
+        "izquierda": "Actividad posterior al incidente",
+        "derecha": "Registra la causa y el costo del incidente, y los pasos para impedir incidentes futuros."
+      }
+    ],
+    "nota": "Corregida: la Guía intercambiaba 'Detección y análisis' y 'Actividad posterior'."
+  },
+  {
+    "id": 3,
+    "tipo": "multiple",
+    "pregunta": "Su empresa le exige conectarse a la red mediante una VPN para trabajar desde casa. ¿Qué tres funciones críticas proporcionan las VPN a los empleados remotos? (Elija 3)",
+    "opciones": [
+      "Confidencialidad de la información",
+      "Administración de contraseñas",
+      "Administración de WAN",
+      "Integridad de los datos",
+      "Autorización de usuarios",
+      "Autenticación de usuarios"
+    ],
+    "correctas": [
+      0,
+      3,
+      5
+    ],
+    "nota": ""
+  },
+  {
+    "id": 4,
+    "tipo": "opcion",
+    "pregunta": "¿Qué tipo de datos se protege con el cifrado de disco duro?",
+    "opciones": [
+      "Datos en proceso",
+      "Datos en uso",
+      "Datos en tránsito",
+      "Datos en reposo"
+    ],
+    "correctas": [
+      3
+    ],
+    "nota": ""
+  },
+  {
+    "id": 5,
+    "tipo": "opcion",
+    "pregunta": "¿Por qué es necesario actualizar el firmware a la última versión?",
+    "opciones": [
+      "Para aplicar las revisiones del firmware en el kernel del sistema operativo.",
+      "Para corregir los agujeros de seguridad y las vulnerabilidades.",
+      "Para admitir los sistemas operativos y las aplicaciones más recientes.",
+      "Para explorar nuevas funciones de hardware."
+    ],
+    "correctas": [
+      1
+    ],
+    "nota": ""
+  },
+  {
+    "id": 6,
+    "tipo": "multiple",
+    "pregunta": "Su compañía creará una directiva BYOD para que los empleados usen sus smartphones personales en la red. ¿Qué tres requisitos se incluyen normalmente? (Elija 3)",
+    "opciones": [
+      "Actualización del plan de datos al máximo disponible",
+      "Instalación de aplicaciones seguras únicamente",
+      "Cifrado de los datos corporativos confidenciales almacenados",
+      "Configuración de una contraseña segura",
+      "Eliminación de todos los datos personales del teléfono",
+      "Sincronización de la contraseña de bloqueo con la contraseña de la red"
+    ],
+    "correctas": [
+      1,
+      2,
+      3
+    ],
+    "nota": ""
+  },
+  {
+    "id": 7,
+    "tipo": "opcion",
+    "pregunta": "¿Qué aplicación de Windows es una interfaz de línea de comandos que incluye un lenguaje de scripting avanzado para automatizar tareas?",
+    "opciones": [
+      "MS-DOS",
+      "PowerShell",
+      "Símbolo del sistema",
+      "Microsoft Management Console"
+    ],
+    "correctas": [
+      1
+    ],
+    "nota": ""
+  },
+  {
+    "id": 8,
+    "tipo": "relacionar",
+    "pregunta": "Ordene las acciones para administrar los riesgos de seguridad de su empresa.",
+    "pares": [
+      {
+        "izquierda": "1",
+        "derecha": "Identificar los riesgos"
+      },
+      {
+        "izquierda": "2",
+        "derecha": "Priorizar los riesgos"
+      },
+      {
+        "izquierda": "3",
+        "derecha": "Implementar una respuesta"
+      },
+      {
+        "izquierda": "4",
+        "derecha": "Supervisar los resultados"
+      }
+    ],
+    "nota": ""
+  },
+  {
+    "id": 9,
+    "tipo": "multiple",
+    "pregunta": "¿Qué dos contraseñas siguen las directrices de una directiva de contraseñas seguras? (Elija 2)",
+    "opciones": [
+      "Fluffy#",
+      "Feb121978",
+      "Wh@tareyouDo1ngtoday4",
+      "1mPressm3!"
+    ],
+    "correctas": [
+      2,
+      3
+    ],
+    "nota": ""
+  },
+  {
+    "id": 10,
+    "tipo": "opcion",
+    "pregunta": "¿Qué tipo de cifrado se utiliza normalmente para proteger las redes wifi?",
+    "opciones": [
+      "Algoritmo de cifrado avanzado (AES)",
+      "RSA (Rivest-Shamir-Adleman)",
+      "Triple DES",
+      "Estándar de cifrado de datos (DES)"
+    ],
+    "correctas": [
+      0
+    ],
+    "nota": ""
+  },
+  {
+    "id": 11,
+    "tipo": "opcion",
+    "pregunta": "Un hospital almacena ePHI en un portal en línea y los empleados acceden con sus móviles. ¿Qué medida necesita para cumplir con HIPAA?",
+    "opciones": [
+      "Un plan de contingencia",
+      "Una directiva que rija cómo se elimina la ePHI de los móviles",
+      "Una directiva de propiedad para los móviles de los empleados",
+      "Una directiva que exija autenticación multifactor para usar el dispositivo móvil"
+    ],
+    "correctas": [
+      3
+    ],
+    "nota": ""
+  },
+  {
+    "id": 12,
+    "tipo": "opcion",
+    "pregunta": "Un cliente instalará varios dispositivos IoT en su casa nueva. ¿Qué debe hacer para que la casa inteligente sea menos vulnerable a ataques?",
+    "opciones": [
+      "Actualizar el firmware de los dispositivos IoT periódicamente",
+      "Habilitar la difusión de SSID en el router",
+      "Conectar los dispositivos IoT a diferentes puntos de acceso",
+      "Comprar dispositivos IoT con la máxima radiofrecuencia"
+    ],
+    "correctas": [
+      0
+    ],
+    "nota": ""
+  },
+  {
+    "id": 13,
+    "tipo": "opcion",
+    "pregunta": "¿Cómo lanzan los agentes de amenazas ataques de software en las organizaciones?",
+    "opciones": [
+      "Modifican el sitio web público de una organización",
+      "Bloquean los datos y deniegan el acceso hasta que reciban dinero",
+      "Espían en secreto a los empleados y recopilan información confidencial",
+      "Implantan malware para recopilar datos del sistema financiero de la corporación"
+    ],
+    "correctas": [
+      0
+    ],
+    "nota": ""
+  },
+  {
+    "id": 14,
+    "tipo": "opcion",
+    "pregunta": "¿Qué evaluación de seguridad comprueba que los datos de identificación personal están disponibles, son precisos y confidenciales y solo son accesibles para usuarios autorizados?",
+    "opciones": [
+      "Administración de flujos de trabajo",
+      "Marco de interpretación de riesgos (Framework)",
+      "Cyber Kill Chain",
+      "Comprobación de información"
+    ],
+    "correctas": [
+      1
+    ],
+    "nota": ""
+  },
+  {
+    "id": 15,
+    "tipo": "opcion",
+    "pregunta": "Necesita transferir archivos de configuración a un router a través de una red no segura. ¿Qué protocolo cifra los archivos en tránsito?",
+    "opciones": [
+      "TFTP",
+      "Telnet",
+      "HTTP",
+      "SSH"
+    ],
+    "correctas": [
+      3
+    ],
+    "nota": ""
+  },
+  {
+    "id": 16,
+    "tipo": "opcion",
+    "pregunta": "Un empleado remoto intenta asociar su portátil de empresa al WAP de una sucursal, pero no puede. ¿Cuál es una causa posible?",
+    "opciones": [
+      "El SSID no se está transmitiendo",
+      "La dirección IP del portátil no es correcta",
+      "El WAP está configurado para el filtrado de direcciones MAC",
+      "El WAP está usando la autenticación abierta"
+    ],
+    "correctas": [
+      2
+    ],
+    "nota": ""
+  },
+  {
+    "id": 17,
+    "tipo": "opcion",
+    "pregunta": "¿Qué característica de seguridad de macOS cifra todo el volumen?",
+    "opciones": [
+      "Gatekeeper",
+      "FileVault",
+      "System Integrity Protection (SIP)",
+      "XProtect"
+    ],
+    "correctas": [
+      1
+    ],
+    "nota": ""
+  },
+  {
+    "id": 18,
+    "tipo": "opcion",
+    "pregunta": "Un formulario web se accede por el puerto 80 y su contenido se guarda en una base de datos cifrada. Hay una queja de que el contenido perdió su confidencialidad. ¿Cuál es la causa?",
+    "opciones": [
+      "La base de datos perdió su carácter confidencial",
+      "Los datos se transfirieron a la base de datos mediante un protocolo no seguro",
+      "El explorador web no estaba actualizado",
+      "Se accedió al sitio web a través de HTTP, que es un protocolo no cifrado"
+    ],
+    "correctas": [
+      3
+    ],
+    "nota": "Corregida: la Guía daba una respuesta vaga ('un ataque al protocolo http')."
+  },
+  {
+    "id": 19,
+    "tipo": "relacionar",
+    "pregunta": "Relacione cada marco de trabajo con su finalidad.",
+    "pares": [
+      {
+        "izquierda": "FERPA",
+        "derecha": "Protege la información académica de los estudiantes."
+      },
+      {
+        "izquierda": "FISMA",
+        "derecha": "Protege la información sobre personas almacenada por agencias federales."
+      },
+      {
+        "izquierda": "RGPD",
+        "derecha": "Protege la información personal de los miembros de la Unión Europea."
+      },
+      {
+        "izquierda": "HIPAA",
+        "derecha": "Protege la información sanitaria de las personas."
+      },
+      {
+        "izquierda": "PCI-DSS",
+        "derecha": "Protege la información de tarjetas de crédito."
+      },
+      {
+        "izquierda": "GLBA",
+        "derecha": "Protege la información financiera de los clientes para que no se comparta con terceros."
+      }
+    ],
+    "nota": "GLBA viene solo de la Guía. La Guía lo describía como 'información de los empleados'; en realidad protege datos financieros de clientes."
+  },
+  {
+    "id": 20,
+    "tipo": "opcion",
+    "pregunta": "¿De qué forma mejora un señuelo (honeypot) la seguridad de red?",
+    "opciones": [
+      "Actúa como una trampa y desvía el tráfico malintencionado de los sistemas importantes",
+      "Detecta y previene amenazas mediante inspección de paquetes en tiempo real",
+      "Aísla los servicios externos de internet",
+      "Supervisa el tráfico y envía alertas ante amenazas importantes"
+    ],
+    "correctas": [
+      0
+    ],
+    "nota": ""
+  },
+  {
+    "id": 21,
+    "tipo": "opcion",
+    "pregunta": "¿Qué debe crear para evitar la suplantación de identidad (spoofing) en la red interna?",
+    "opciones": [
+      "Un registro de DNS",
+      "Un registro en el archivo host",
+      "Una ACL",
+      "Una regla NAT"
+    ],
+    "correctas": [
+      2
+    ],
+    "nota": ""
+  },
+  {
+    "id": 22,
+    "tipo": "multiple",
+    "pregunta": "Tras una intrusión sospechosa en la LAN, necesita capturar los paquetes IP entrantes en un archivo para un investigador. ¿Qué dos herramientas usaría? (Elija 2)",
+    "opciones": [
+      "tcpdump",
+      "netstat",
+      "Nmap",
+      "Wireshark"
+    ],
+    "correctas": [
+      0,
+      3
+    ],
+    "nota": ""
+  },
+  {
+    "id": 23,
+    "tipo": "opcion",
+    "pregunta": "¿Cuál es la finalidad principal de un plan de recuperación ante desastres en comparación con un plan de continuidad del negocio?",
+    "opciones": [
+      "Restaurar el acceso a los datos y a la infraestructura de TI lo antes posible",
+      "Mantener el negocio abierto de alguna forma durante un desastre",
+      "Permitir que los empleados sigan atendiendo a los clientes",
+      "Limitar el tiempo de inactividad de las operaciones"
+    ],
+    "correctas": [
+      0
+    ],
+    "nota": ""
+  },
+  {
+    "id": 24,
+    "tipo": "multiple",
+    "pregunta": "Revisa el resultado de unos análisis de vulnerabilidades. ¿Qué dos hallazgos debe registrar para investigarlos como posibles vulnerabilidades? (Elija 2)",
+    "opciones": [
+      "Puertos abiertos",
+      "Contraseñas cifradas",
+      "Firewalls deshabilitados",
+      "Paquetes SSH"
+    ],
+    "correctas": [
+      0,
+      2
+    ],
+    "nota": ""
+  },
+  {
+    "id": 25,
+    "tipo": "opcion",
+    "pregunta": "¿Qué comando muestra la información del servidor DNS configurado y la resolución de dirección IP de una URL?",
+    "opciones": [
+      "traceroute",
+      "nslookup",
+      "ping",
+      "Nmap"
+    ],
+    "correctas": [
+      1
+    ],
+    "nota": ""
+  },
+  {
+    "id": 26,
+    "tipo": "opcion",
+    "pregunta": "El servidor DNS envía mensajes syslog con gravedad \"Advertencia\". ¿Qué indican?",
+    "opciones": [
+      "El servidor está inutilizable por un error grave y se está cerrando",
+      "Existe una condición que causará errores en el futuro si no se soluciona",
+      "Hay un error que debe solucionarse inmediatamente",
+      "Hay un error de hardware que no requiere atención inmediata"
+    ],
+    "correctas": [
+      1
+    ],
+    "nota": ""
+  },
+  {
+    "id": 27,
+    "tipo": "opcion",
+    "pregunta": "Una empresa contrata ciberdelincuentes para crear una presencia prolongada e intensa en la red de un competidor y robar o sabotear datos. ¿Qué tipo de ataque es?",
+    "opciones": [
+      "APT",
+      "Man-in-the-middle",
+      "DDoS",
+      "Ransomware"
+    ],
+    "correctas": [
+      0
+    ],
+    "nota": ""
+  },
+  {
+    "id": 28,
+    "tipo": "opcion",
+    "pregunta": "¿Qué significa APT?",
+    "opciones": [
+      "Ataque de protocolo temporal: un ataque rápido que satura un servicio",
+      "Amenaza persistente avanzada: un ataque continuo y prolongado que usa malware sofisticado",
+      "Acceso privilegiado total: una cuenta de administrador comprometida",
+      "Análisis de paquetes en tránsito: una técnica para capturar tráfico"
+    ],
+    "correctas": [
+      1
+    ],
+    "nota": "Pregunta tomada de la Guía."
+  },
+  {
+    "id": 29,
+    "tipo": "opcion",
+    "pregunta": "¿Qué permite al equipo de seguridad hacer seguimiento de versiones del sistema operativo, actualizaciones y revisiones en los dispositivos de los usuarios?",
+    "opciones": [
+      "Planificación de la continuidad del negocio",
+      "Directivas y procedimientos de seguridad",
+      "Administración de activos",
+      "Administración de incidentes"
+    ],
+    "correctas": [
+      2
+    ],
+    "nota": ""
+  },
+  {
+    "id": 30,
+    "tipo": "opcion",
+    "pregunta": "Necesita que los empleados accedan a la red segura de la empresa desde sus casas. ¿Qué debe implementar?",
+    "opciones": [
+      "BYOD",
+      "IDS",
+      "VPN",
+      "SNMP"
+    ],
+    "correctas": [
+      2
+    ],
+    "nota": ""
+  },
+  {
+    "id": 31,
+    "tipo": "opcion",
+    "pregunta": "El sitio de intranet ya no acepta inicios de sesión. Por URL aparece con palabras mal escritas, pero por IP funciona normal. ¿Qué debe hacer?",
+    "opciones": [
+      "Restaurar una copia de seguridad de la base de datos de autenticación",
+      "Desconectar el portal web de la empresa",
+      "Actualizar el software del servidor web",
+      "Comprobar la exactitud de la entrada del sitio en el servidor DNS local"
+    ],
+    "correctas": [
+      3
+    ],
+    "nota": ""
+  },
+  {
+    "id": 32,
+    "tipo": "opcion",
+    "pregunta": "Un analista investiga un ejecutable desconocido en Linux y escribe ls -l. ¿Qué finalidad tiene este comando?",
+    "opciones": [
+      "Mostrar el contenido de un archivo de texto",
+      "Mostrar los permisos y la propiedad del archivo",
+      "Acceder a la carpeta pasada como argumento",
+      "Abrir un editor de texto"
+    ],
+    "correctas": [
+      1
+    ],
+    "nota": ""
+  },
+  {
+    "id": 33,
+    "tipo": "opcion",
+    "pregunta": "Contabilidad recibe un correo sobre normativas con un enlace a un seminario web supuestamente de la administración pública, pero el enlace apunta a una entidad desconocida. ¿Qué amenaza debe investigar?",
+    "opciones": [
+      "Smishing",
+      "Vishing",
+      "Phishing de objetivo definido",
+      "Ransomware"
+    ],
+    "correctas": [
+      2
+    ],
+    "nota": ""
+  },
+  {
+    "id": 34,
+    "tipo": "opcion",
+    "pregunta": "¿Qué proporcionan los algoritmos hash a la comunicación de datos?",
+    "opciones": [
+      "Irrenunciabilidad de los datos",
+      "Autenticación del origen",
+      "Cifrado de datos",
+      "Integridad de los datos"
+    ],
+    "correctas": [
+      3
+    ],
+    "nota": ""
+  },
+  {
+    "id": 35,
+    "tipo": "opcion",
+    "pregunta": "¿Qué actividad de un atacante es un ejemplo de ataque para obtener credenciales del usuario?",
+    "opciones": [
+      "Obtener un listado de los archivos del servidor de base de datos web",
+      "Realizar un análisis de puertos de las IP de la empresa",
+      "Instalar una puerta trasera para comunicación bidireccional",
+      "Enviar un correo con un vínculo a la página de inicio de sesión de un portal ficticio"
+    ],
+    "correctas": [
+      3
+    ],
+    "nota": ""
+  },
+  {
+    "id": 36,
+    "tipo": "opcion",
+    "pregunta": "Una tienda en línea deja de responder; la reinicia y a los 30 minutos vuelve a bloquearse. ¿Qué amenaza debe investigar?",
+    "opciones": [
+      "Ransomware",
+      "Phishing de objetivo definido",
+      "Ingeniería social",
+      "Denegación de servicio"
+    ],
+    "correctas": [
+      3
+    ],
+    "nota": ""
+  },
+  {
+    "id": 37,
+    "tipo": "opcion",
+    "pregunta": "Para los riesgos del servidor web recomienda contratar un seguro y externalizar su mantenimiento. ¿Qué estrategia de mitigación es esta?",
+    "opciones": [
+      "Reducción de riesgos",
+      "Elusión de riesgos",
+      "Aceptación de riesgos",
+      "Transferencia de riesgos"
+    ],
+    "correctas": [
+      3
+    ],
+    "nota": ""
+  },
+  {
+    "id": 38,
+    "tipo": "opcion",
+    "pregunta": "El SIEM avisa que los usuarios se conectan a una URL inusual. Debe determinar si es maliciosa y qué amenaza representa. ¿Qué debe hacer?",
+    "opciones": [
+      "Visitar la URL para ver si es legítima",
+      "Bloquear la URL en la lista de bloqueos",
+      "Preguntar a los usuarios por qué la visitaron",
+      "Enviar la URL a un portal de inteligencia sobre amenazas"
+    ],
+    "correctas": [
+      3
+    ],
+    "nota": ""
+  },
+  {
+    "id": 39,
+    "tipo": "opcion",
+    "pregunta": "¿Qué actividad es un ejemplo de reconocimiento activo en una prueba de penetración?",
+    "opciones": [
+      "Buscar en WHOIS al propietario de un dominio",
+      "Realizar un análisis de puertos Nmap en la LAN",
+      "Ver el código fuente de las páginas web de la empresa",
+      "Obtener datos de empleados en directorios web y redes sociales"
+    ],
+    "correctas": [
+      1
+    ],
+    "nota": ""
+  },
+  {
+    "id": 40,
+    "tipo": "opcion",
+    "pregunta": "Debe realizar un análisis completo de un equipo Windows. ¿Dónde ve el resultado?",
+    "opciones": [
+      "Seguridad de Windows",
+      "Registros de aplicaciones de Windows",
+      "Administrador de tareas de Windows",
+      "Registros del sistema de Windows"
+    ],
+    "correctas": [
+      0
+    ],
+    "nota": "Corregida: la Guía indicaba 'Registros del sistema'."
+  },
+  {
+    "id": 41,
+    "tipo": "multiple",
+    "pregunta": "¿Qué dos desastres naturales podrían hacer que una empresa implemente un plan de recuperación ante desastres? (Elija 2)",
+    "opciones": [
+      "Inundaciones",
+      "Erupciones volcánicas",
+      "Contaminación nuclear",
+      "Vertidos de materiales peligrosos"
+    ],
+    "correctas": [
+      0,
+      1
+    ],
+    "nota": "Otros desastres naturales: huracanes y terremotos."
+  },
+  {
+    "id": 42,
+    "tipo": "opcion",
+    "pregunta": "¿Qué clasificación de alerta representa la mayor amenaza porque indica un ataque no detectado?",
+    "opciones": [
+      "Falso negativo",
+      "Falso positivo",
+      "Verdadero negativo",
+      "Verdadero positivo"
+    ],
+    "correctas": [
+      0
+    ],
+    "nota": ""
+  },
+  {
+    "id": 43,
+    "tipo": "opcion",
+    "pregunta": "Ejecuta netstat para ver los puertos TCP en estado \"En escucha\". ¿Qué indica ese estado?",
+    "opciones": [
+      "Los puertos están conectados activamente a otro sistema",
+      "El estado de conexión es desconocido",
+      "Los puertos están abiertos y a la espera de conexiones",
+      "El extremo remoto se desconectó y los puertos se están cerrando"
+    ],
+    "correctas": [
+      2
+    ],
+    "nota": "Recuerda: Escucha = abierto esperando; Establecido = conectado; Cerrado = no acepta conexiones."
+  },
+  {
+    "id": 44,
+    "tipo": "relacionar",
+    "pregunta": "Relacione cada tipo de registro de Windows con su descripción.",
+    "pares": [
+      {
+        "izquierda": "Registros de aplicación",
+        "derecha": "Contiene eventos de programas que se ejecutan en el dispositivo."
+      },
+      {
+        "izquierda": "Registros de configuración",
+        "derecha": "Registra la instalación de software y las actualizaciones del sistema operativo."
+      },
+      {
+        "izquierda": "Registros del sistema",
+        "derecha": "Muestra eventos de hardware, controladores y procesos."
+      },
+      {
+        "izquierda": "Registros de seguridad",
+        "derecha": "Registra si los eventos de la directiva de auditoría se ejecutaron correcta o incorrectamente."
+      }
+    ],
+    "nota": "Corregida: la Guía intercambiaba 'configuración' y 'sistema'."
+  },
+  {
+    "id": 45,
+    "tipo": "relacionar",
+    "pregunta": "Relacione cada término de ciberseguridad con su descripción.",
+    "pares": [
+      {
+        "izquierda": "Activo",
+        "derecha": "Personas, propiedades o datos."
+      },
+      {
+        "izquierda": "Amenaza",
+        "derecha": "Una acción que causa un efecto negativo."
+      },
+      {
+        "izquierda": "Riesgo",
+        "derecha": "El potencial de pérdida, daño o destrucción."
+      },
+      {
+        "izquierda": "Vulnerabilidad",
+        "derecha": "Una debilidad que expone a la organización a ciberataques."
+      }
+    ],
+    "nota": ""
+  },
+  {
+    "id": 46,
+    "tipo": "relacionar",
+    "pregunta": "Relacione cada principio de la tríada CIA con su definición.",
+    "pares": [
+      {
+        "izquierda": "Confidencialidad",
+        "derecha": "Solo los usuarios autorizados deben acceder a los datos y leerlos."
+      },
+      {
+        "izquierda": "Integridad",
+        "derecha": "Nunca se deben modificar los datos ni permitir que pierdan su carácter confidencial."
+      },
+      {
+        "izquierda": "Disponibilidad",
+        "derecha": "Solo las solicitudes legítimas deben poder acceder a los datos."
+      }
+    ],
+    "nota": ""
+  },
+  {
+    "id": 47,
+    "tipo": "relacionar",
+    "pregunta": "Indique si cada afirmación sigue el código ético de ciberseguridad.",
+    "pares": [
+      {
+        "izquierda": "FALSO",
+        "derecha": "Un analista puede usar las credenciales de un empleado descontento para supervisar su comportamiento."
+      },
+      {
+        "izquierda": "VERDADERO",
+        "derecha": "Un analista puede acceder a los datos de empleados en un servidor si tiene autorización."
+      },
+      {
+        "izquierda": "FALSO",
+        "derecha": "Un analista puede compartir datos confidenciales con usuarios no autorizados."
+      }
+    ],
+    "nota": ""
+  },
+  {
+    "id": 48,
+    "tipo": "multiple",
+    "pregunta": "¿Qué dos acciones diarias de copia de seguridad debe incluir en el plan de recuperación ante desastres? (Elija 2)",
+    "opciones": [
+      "Copia de los datos de cada departamento en un servidor local distinto",
+      "Copia en medios extraíbles almacenados fuera de las instalaciones",
+      "Copia mediante RAID en un disco externo local con alimentación secundaria",
+      "Copia mediante servicios en la nube"
+    ],
+    "correctas": [
+      1,
+      3
+    ],
+    "nota": ""
+  },
+  {
+    "id": 49,
+    "tipo": "opcion",
+    "pregunta": "¿Cuál es el objetivo principal de un análisis de vulnerabilidades en la red?",
+    "opciones": [
+      "Identificar y documentar ubicaciones de bases de datos de clientes",
+      "Relacionar registros de eventos de varios servidores para generar alertas",
+      "Determinar si los sistemas están sujetos a CVE que puedan aprovechar los atacantes",
+      "Priorizar automáticamente los puntos débiles para su corrección"
+    ],
+    "correctas": [
+      2
+    ],
+    "nota": ""
+  },
+  {
+    "id": 50,
+    "tipo": "opcion",
+    "pregunta": "Su red doméstica va lenta y ve un host desconocido conectado. ¿Qué hace para evitar que ese host específico se conecte de nuevo?",
+    "opciones": [
+      "Crear una ACL de direcciones IP",
+      "Bloquear la dirección IP del host",
+      "Implementar el filtrado de direcciones MAC",
+      "Cambiar el SSID de la red"
+    ],
+    "correctas": [
+      2
+    ],
+    "nota": ""
+  },
+  {
+    "id": 51,
+    "tipo": "opcion",
+    "pregunta": "Se comparte una nueva CVE en un grupo de correo del que forma parte. ¿Qué debe hacer primero?",
+    "opciones": [
+      "Registrarla en el plan de recuperación ante desastres",
+      "Examinar los detalles para determinar si se aplica a su red",
+      "Investigar medidas para impedir que la CVE ataque la red",
+      "Agregarla a las reglas del firewall"
+    ],
+    "correctas": [
+      1
+    ],
+    "nota": ""
+  },
+  {
+    "id": 52,
+    "tipo": "opcion",
+    "pregunta": "Un restaurante instala un segundo router inalámbrico solo para empleados. ¿Cómo debe configurarse de forma segura?",
+    "opciones": [
+      "Con mayor intensidad de señal para cubrir el aparcamiento",
+      "Con el SSID con la difusión deshabilitada",
+      "Filtrando direcciones IP",
+      "Con el mismo SSID que el router de los clientes"
+    ],
+    "correctas": [
+      1
+    ],
+    "nota": ""
+  },
+  {
+    "id": 53,
+    "tipo": "opcion",
+    "pregunta": "¿Cuál es la longitud mínima recomendada para una contraseña?",
+    "opciones": [
+      "6 caracteres",
+      "8 caracteres",
+      "4 caracteres",
+      "No hay mínimo si incluye símbolos"
+    ],
+    "correctas": [
+      1
+    ],
+    "nota": "Pregunta tomada de la Guía."
+  },
+  {
+    "id": 54,
+    "tipo": "opcion",
+    "pregunta": "En el Modelo Diamante de análisis de intrusiones, ¿cuáles son sus cuatro vértices?",
+    "opciones": [
+      "Adversario, Capacidad, Infraestructura y Víctima",
+      "Activo, Amenaza, Riesgo y Vulnerabilidad",
+      "Confidencialidad, Integridad, Disponibilidad y Autenticación",
+      "Identificar, Proteger, Detectar y Responder"
+    ],
+    "correctas": [
+      0
+    ],
+    "nota": "Pregunta tomada de la Guía."
+  },
+  {
+    "id": 55,
+    "tipo": "opcion",
+    "pregunta": "¿Cuál de las siguientes es una metacaracterística del Modelo Diamante?",
+    "opciones": [
+      "Cifrado",
+      "Marca de hora",
+      "Firewall",
+      "Contraseña"
+    ],
+    "correctas": [
+      1
+    ],
+    "nota": "Las metacaracterísticas son: marca de hora, fase, resultado, dirección, metodología y recursos. Pregunta tomada de la Guía."
+  }
+]

@@ -1,0 +1,797 @@
+/* =========================================================
+   CCST Ciberseguridad – Estilos
+   Mobile-first. Colores en variables CSS con modo oscuro automático.
+   ========================================================= */
+
+/* ---------- Variables (modo claro) ---------- */
+:root {
+  --color-fondo: #f4f6fb;
+  --color-superficie: #ffffff;
+  --color-superficie-2: #eaeef6;
+  --color-texto: #111827;
+  --color-texto-suave: #4b5563;
+  --color-borde: #cfd6e2;
+  --color-acento: #1d4ed8;
+  --color-acento-hover: #1e40af;
+  --color-acento-suave: #e3ebff;
+  --color-sobre-acento: #ffffff;
+  --color-correcto: #15803d;
+  --color-correcto-fondo: #e6f5eb;
+  --color-incorrecto: #b91c1c;
+  --color-incorrecto-fondo: #fdeaea;
+  --color-foco: #1d4ed8;
+
+  --fuente: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fuente-mono: ui-monospace, "Cascadia Code", "SF Mono", Consolas, monospace;
+  --radio: 0.75rem;
+  --radio-pequeno: 0.5rem;
+  --sombra: 0 0.0625rem 0.125rem rgb(15 23 42 / 6%), 0 0.25rem 0.75rem rgb(15 23 42 / 6%);
+  --alto-tactil: 2.75rem; /* 44px */
+  --espacio: 1rem;
+
+  color-scheme: light;
+}
+
+/* ---------- Modo oscuro automático ---------- */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-fondo: #0d1320;
+    --color-superficie: #161f30;
+    --color-superficie-2: #1f2a3f;
+    --color-texto: #e6e9ef;
+    --color-texto-suave: #a5afc0;
+    --color-borde: #34415a;
+    --color-acento: #60a5fa;
+    --color-acento-hover: #93c5fd;
+    --color-acento-suave: #1b3358;
+    --color-sobre-acento: #0b1220;
+    --color-correcto: #4ade80;
+    --color-correcto-fondo: #10301d;
+    --color-incorrecto: #f87171;
+    --color-incorrecto-fondo: #3a1618;
+    --color-foco: #93c5fd;
+    --sombra: none;
+
+    color-scheme: dark;
+  }
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--color-texto);
+  background: var(--color-fondo);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+h1, h2, h3 {
+  line-height: 1.3;
+  margin: 0;
+}
+
+p {
+  margin: 0 0 0.75rem;
+}
+
+code, kbd {
+  font-family: var(--fuente-mono);
+  font-size: 0.9em;
+}
+
+code {
+  padding: 0.1em 0.35em;
+  border-radius: 0.3rem;
+  background: var(--color-superficie-2);
+  overflow-wrap: anywhere;
+}
+
+kbd {
+  display: inline-block;
+  min-width: 1.5em;
+  padding: 0 0.35em;
+  border: 0.0625rem solid var(--color-borde);
+  border-bottom-width: 0.125rem;
+  border-radius: 0.3rem;
+  background: var(--color-superficie);
+  text-align: center;
+}
+
+/* Foco visible para navegación con teclado */
+:focus-visible {
+  outline: 0.1875rem solid var(--color-foco);
+  outline-offset: 0.125rem;
+}
+
+/* El enunciado recibe foco por código; no hace falta resaltarlo */
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
+.solo-lector {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.texto-centrado { text-align: center; }
+.texto-suave { color: var(--color-texto-suave); }
+.texto-pequeno { font-size: 0.875rem; }
+
+/* ---------- Estructura ---------- */
+.contenedor {
+  width: 100%;
+  max-width: 45rem; /* ~720px */
+  margin-inline: auto;
+  padding-inline: var(--espacio);
+}
+
+.cabecera {
+  background: var(--color-superficie);
+  border-bottom: 0.0625rem solid var(--color-borde);
+  padding-block: 0.875rem;
+}
+
+.cabecera-titulo {
+  font-size: 1.2rem;
+  color: var(--color-acento);
+}
+
+.cabecera-subtitulo {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--color-texto-suave);
+}
+
+.principal {
+  padding-block: 1.25rem 3rem;
+}
+
+.pantalla {
+  display: grid;
+  gap: 1rem;
+}
+
+.titulo-seccion {
+  font-size: 1.35rem;
+}
+
+.tarjeta {
+  background: var(--color-superficie);
+  border: 0.0625rem solid var(--color-borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 1.25rem 1rem;
+}
+
+/* ---------- Botones ---------- */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: var(--alto-tactil);
+  padding: 0.625rem 1.125rem;
+  border: 0.125rem solid transparent;
+  border-radius: var(--radio-pequeno);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.boton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.boton-primario {
+  background: var(--color-acento);
+  color: var(--color-sobre-acento);
+}
+
+.boton-primario:hover:not(:disabled) {
+  background: var(--color-acento-hover);
+}
+
+.boton-secundario {
+  background: var(--color-superficie);
+  border-color: var(--color-borde);
+  color: var(--color-texto);
+}
+
+.boton-secundario:hover:not(:disabled) {
+  border-color: var(--color-acento);
+  color: var(--color-acento);
+}
+
+.boton-texto {
+  background: transparent;
+  color: var(--color-acento);
+  padding-inline: 0.75rem;
+}
+
+.boton-texto:hover:not(:disabled) {
+  background: var(--color-acento-suave);
+}
+
+.boton-peligro {
+  color: var(--color-incorrecto);
+}
+
+.boton-peligro:hover:not(:disabled) {
+  background: var(--color-incorrecto-fondo);
+}
+
+/* ---------- Inicio ---------- */
+.estadisticas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.625rem;
+  margin: 0;
+}
+
+.estadistica {
+  background: var(--color-superficie);
+  border: 0.0625rem solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+}
+
+.estadistica dt {
+  font-size: 0.8rem;
+  color: var(--color-texto-suave);
+}
+
+.estadistica dd {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.modos {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.boton-modo {
+  display: grid;
+  gap: 0.25rem;
+  width: 100%;
+  min-height: var(--alto-tactil);
+  padding: 1rem 1.125rem;
+  border: 0.125rem solid var(--color-borde);
+  border-radius: var(--radio);
+  background: var(--color-superficie);
+  color: var(--color-texto);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: var(--sombra);
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.boton-modo:hover:not(:disabled) {
+  border-color: var(--color-acento);
+  background: var(--color-acento-suave);
+}
+
+.boton-modo:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  box-shadow: none;
+}
+
+.boton-modo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-acento);
+}
+
+.boton-modo-texto {
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
+}
+
+.insignia {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  border-radius: 62.5rem;
+  background: var(--color-acento-suave);
+  color: var(--color-acento);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.insignia:empty {
+  display: none;
+}
+
+.insignia-ok {
+  background: var(--color-correcto-fondo);
+  color: var(--color-correcto);
+}
+
+.insignia-error {
+  background: var(--color-incorrecto-fondo);
+  color: var(--color-incorrecto);
+}
+
+/* ---------- Sesión: barra superior y progreso ---------- */
+.barra-sesion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.etiqueta-modo {
+  font-weight: 700;
+  color: var(--color-acento);
+}
+
+.progreso-textos {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.barra-progreso {
+  height: 0.5rem;
+  border-radius: 62.5rem;
+  background: var(--color-superficie-2);
+  overflow: hidden;
+}
+
+.barra-relleno {
+  width: 0%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--color-acento);
+  transition: width 0.25s ease;
+}
+
+/* ---------- Pregunta ---------- */
+.enunciado {
+  font-size: 1.1rem;
+  font-weight: 600;
+  white-space: pre-line;
+  margin-bottom: 0.5rem;
+}
+
+.instruccion {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-texto-suave);
+}
+
+.instruccion:empty {
+  display: none;
+}
+
+.opciones {
+  display: grid;
+  gap: 0.625rem;
+}
+
+.opcion {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: var(--alto-tactil);
+  padding: 0.75rem 0.875rem;
+  border: 0.125rem solid var(--color-borde);
+  border-radius: var(--radio-pequeno);
+  background: var(--color-superficie);
+  color: var(--color-texto);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.opcion:hover:not(:disabled) {
+  border-color: var(--color-acento);
+}
+
+.opcion:disabled {
+  cursor: default;
+}
+
+.opcion-tecla {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 0.125rem solid var(--color-borde);
+  border-radius: 50%;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+/* Las opciones de selección múltiple usan casilla cuadrada */
+.opciones-multiples .opcion-tecla {
+  border-radius: 0.35rem;
+}
+
+.opcion-texto {
+  flex: 1;
+  white-space: pre-line;
+}
+
+.opcion-marca {
+  flex: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.opcion.seleccionada {
+  border-color: var(--color-acento);
+  background: var(--color-acento-suave);
+}
+
+.opcion.seleccionada .opcion-tecla {
+  border-color: var(--color-acento);
+  background: var(--color-acento);
+  color: var(--color-sobre-acento);
+}
+
+.opcion.correcta {
+  border-color: var(--color-correcto);
+  background: var(--color-correcto-fondo);
+}
+
+.opcion.correcta .opcion-tecla {
+  border-color: var(--color-correcto);
+  background: var(--color-correcto);
+  color: var(--color-sobre-acento);
+}
+
+.opcion.correcta .opcion-marca {
+  color: var(--color-correcto);
+}
+
+.opcion.incorrecta {
+  border-color: var(--color-incorrecto);
+  background: var(--color-incorrecto-fondo);
+}
+
+.opcion.incorrecta .opcion-tecla {
+  border-color: var(--color-incorrecto);
+  background: var(--color-incorrecto);
+  color: var(--color-sobre-acento);
+}
+
+.opcion.incorrecta .opcion-marca {
+  color: var(--color-incorrecto);
+}
+
+/* ---------- Relacionar (lista vertical en celular) ---------- */
+.relacionar {
+  display: grid;
+  gap: 0.625rem;
+}
+
+.fila-relacion {
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border: 0.125rem solid var(--color-borde);
+  border-radius: var(--radio-pequeno);
+}
+
+.fila-relacion.correcta {
+  border-color: var(--color-correcto);
+  background: var(--color-correcto-fondo);
+}
+
+.fila-relacion.incorrecta {
+  border-color: var(--color-incorrecto);
+  background: var(--color-incorrecto-fondo);
+}
+
+.relacion-izquierda {
+  font-weight: 600;
+  white-space: pre-line;
+}
+
+.relacion-select {
+  width: 100%;
+  min-height: var(--alto-tactil);
+  padding: 0.5rem 0.625rem;
+  border: 0.125rem solid var(--color-borde);
+  border-radius: var(--radio-pequeno);
+  background: var(--color-superficie);
+  color: var(--color-texto);
+  font: inherit;
+  cursor: pointer;
+}
+
+.relacion-select:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.relacion-solucion {
+  margin: 0.4rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.fila-relacion.correcta .relacion-solucion { color: var(--color-correcto); }
+.fila-relacion.incorrecta .relacion-solucion { color: var(--color-incorrecto); }
+
+/* ---------- Retroalimentación ---------- */
+.retroalimentacion {
+  margin-top: 1rem;
+  padding: 0.875rem 1rem;
+  border-left: 0.3rem solid var(--color-borde);
+  border-radius: var(--radio-pequeno);
+  background: var(--color-superficie-2);
+}
+
+.retroalimentacion.es-correcta { border-left-color: var(--color-correcto); }
+.retroalimentacion.es-incorrecta { border-left-color: var(--color-incorrecto); }
+
+.retro-titulo {
+  font-weight: 700;
+}
+
+.es-correcta .retro-titulo { color: var(--color-correcto); }
+.es-incorrecta .retro-titulo { color: var(--color-incorrecto); }
+
+.retro-nota {
+  margin: 0;
+  white-space: pre-line;
+}
+
+/* ---------- Controles (celular: Comprobar arriba a lo ancho) ---------- */
+.controles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+#btn-comprobar {
+  grid-column: 1 / -1;
+  order: -1;
+}
+
+.ayuda-teclado {
+  display: none;
+  text-align: center;
+  margin: 0;
+}
+
+/* Solo mostramos la ayuda de teclado en equipos con puntero fino */
+@media (hover: hover) and (pointer: fine) {
+  .ayuda-teclado { display: block; }
+}
+
+/* ---------- Resultados ---------- */
+.resumen {
+  text-align: center;
+}
+
+.puntaje {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-acento);
+}
+
+.resultado-aciertos {
+  font-weight: 600;
+}
+
+.acciones-resultado {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.revision-cabecera-lista {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.interruptor {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: var(--alto-tactil);
+  cursor: pointer;
+}
+
+.interruptor input {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: var(--color-acento);
+}
+
+.revision {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.revision.solo-incorrectas .revision-item.correcta {
+  display: none;
+}
+
+.revision-item {
+  padding: 1rem;
+  border: 0.0625rem solid var(--color-borde);
+  border-left: 0.3rem solid var(--color-borde);
+  border-radius: var(--radio-pequeno);
+  background: var(--color-superficie);
+}
+
+.revision-item.correcta { border-left-color: var(--color-correcto); }
+.revision-item.incorrecta { border-left-color: var(--color-incorrecto); }
+
+.revision-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-texto-suave);
+}
+
+.revision-enunciado {
+  font-weight: 600;
+  white-space: pre-line;
+}
+
+.revision-bloque {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.revision-bloque strong {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-texto-suave);
+}
+
+.revision-bloque ul {
+  margin: 0.2rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.revision-bloque.ok li { color: var(--color-correcto); }
+.revision-bloque.error li { color: var(--color-incorrecto); }
+
+.revision-nota {
+  margin: 0.75rem 0 0;
+  padding-top: 0.6rem;
+  border-top: 0.0625rem dashed var(--color-borde);
+  font-size: 0.9rem;
+  color: var(--color-texto-suave);
+  white-space: pre-line;
+}
+
+/* ---------- Error ---------- */
+.aviso-error {
+  border-left: 0.3rem solid var(--color-incorrecto);
+}
+
+.aviso-error h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-incorrecto);
+}
+
+.aviso-error ul {
+  margin: 0 0 0.75rem;
+  padding-left: 1.25rem;
+}
+
+.aviso-error li {
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- Laptop / escritorio (≥ 768px) ---------- */
+@media (min-width: 48em) {
+  body {
+    font-size: 1.0625rem;
+  }
+
+  .contenedor {
+    padding-inline: 1.5rem;
+  }
+
+  .principal {
+    padding-block: 2rem 4rem;
+  }
+
+  .pantalla {
+    gap: 1.25rem;
+  }
+
+  .cabecera-titulo {
+    font-size: 1.4rem;
+  }
+
+  .titulo-seccion {
+    font-size: 1.6rem;
+  }
+
+  .tarjeta {
+    padding: 1.75rem 2rem;
+  }
+
+  .enunciado {
+    font-size: 1.25rem;
+  }
+
+  /* Relacionar: dos columnas */
+  .fila-relacion {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* Controles en una sola fila */
+  .controles {
+    display: flex;
+  }
+
+  #btn-anterior {
+    margin-right: auto;
+  }
+
+  #btn-comprobar {
+    order: 0;
+  }
+
+  .acciones-resultado {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---------- Movimiento reducido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
